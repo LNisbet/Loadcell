@@ -1,0 +1,73 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Projects\\LoadCell\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{84F5E205-C978-4A14-881D-FBED9D9D8884}|..\\Loadcell.Core\\Loadcell.Core.csproj|d:\\projects\\loadcell.core\\loadcellbluetoothleadvertisementwatcher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{479A7172-86BD-4A06-B14D-95006845A738}|..\\Loadcell.Sandbox\\Loadcell.Sandbox.csproj|d:\\projects\\loadcell.sandbox\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25675AA0-E12C-4841-B916-53187216FA6B}|LoadCell.csproj|d:\\projects\\loadcell\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25675AA0-E12C-4841-B916-53187216FA6B}|LoadCell.csproj|solutionrelative:mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "D:\\Projects\\LoadCell\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "MainWindow.xaml.cs",
+              "ToolTip": "D:\\Projects\\LoadCell\\MainWindow.xaml.cs",
+              "RelativeToolTip": "MainWindow.xaml.cs",
+              "ViewState": "AQIAAA8AAAAAAAAAAADwvzoAAAASAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-29T23:15:52.332Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Projects\\Loadcell.Sandbox\\Program.cs",
+              "RelativeDocumentMoniker": "..\\Loadcell.Sandbox\\Program.cs",
+              "ToolTip": "D:\\Projects\\Loadcell.Sandbox\\Program.cs",
+              "RelativeToolTip": "..\\Loadcell.Sandbox\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-29T23:15:24.333Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "LoadcellBluetoothLEAdvertisementWatcher.cs",
+              "DocumentMoniker": "D:\\Projects\\Loadcell.Core\\LoadcellBluetoothLEAdvertisementWatcher.cs",
+              "RelativeDocumentMoniker": "..\\Loadcell.Core\\LoadcellBluetoothLEAdvertisementWatcher.cs",
+              "ToolTip": "D:\\Projects\\Loadcell.Core\\LoadcellBluetoothLEAdvertisementWatcher.cs",
+              "RelativeToolTip": "..\\Loadcell.Core\\LoadcellBluetoothLEAdvertisementWatcher.cs",
+              "ViewState": "AQIAABUAAAAAAAAAAAAowDEAAAAbAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-29T21:47:40.344Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

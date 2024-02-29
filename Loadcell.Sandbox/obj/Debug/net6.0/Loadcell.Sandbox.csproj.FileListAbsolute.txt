@@ -1,0 +1,14 @@
+D:\Projects\Loadcell.Sandbox\bin\Debug\net6.0\Loadcell.Sandbox.exe
+D:\Projects\Loadcell.Sandbox\bin\Debug\net6.0\Loadcell.Sandbox.deps.json
+D:\Projects\Loadcell.Sandbox\bin\Debug\net6.0\Loadcell.Sandbox.runtimeconfig.json
+D:\Projects\Loadcell.Sandbox\bin\Debug\net6.0\Loadcell.Sandbox.dll
+D:\Projects\Loadcell.Sandbox\bin\Debug\net6.0\Loadcell.Sandbox.pdb
+D:\Projects\Loadcell.Sandbox\obj\Debug\net6.0\Loadcell.Sandbox.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\Loadcell.Sandbox\obj\Debug\net6.0\Loadcell.Sandbox.AssemblyInfoInputs.cache
+D:\Projects\Loadcell.Sandbox\obj\Debug\net6.0\Loadcell.Sandbox.AssemblyInfo.cs
+D:\Projects\Loadcell.Sandbox\obj\Debug\net6.0\Loadcell.Sandbox.csproj.CoreCompileInputs.cache
+D:\Projects\Loadcell.Sandbox\obj\Debug\net6.0\Loadcell.Sandbox.dll
+D:\Projects\Loadcell.Sandbox\obj\Debug\net6.0\refint\Loadcell.Sandbox.dll
+D:\Projects\Loadcell.Sandbox\obj\Debug\net6.0\Loadcell.Sandbox.pdb
+D:\Projects\Loadcell.Sandbox\obj\Debug\net6.0\Loadcell.Sandbox.genruntimeconfig.cache
+D:\Projects\Loadcell.Sandbox\obj\Debug\net6.0\ref\Loadcell.Sandbox.dll
