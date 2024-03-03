@@ -6,7 +6,7 @@
         xmlns:lvc="clr-namespace:LiveChartsCore.SkiaSharpView.WPF;assembly=LiveChartsCore.SkiaSharpView.WPF"
         xmlns:local="clr-namespace:LoadCell"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="800" Width="800">
 
     <Grid>
         <StackPanel x:Name="Main_SP">
@@ -15,6 +15,9 @@
             <lvc:CartesianChart x:Name="TestChart" Series="{Binding Series}" Height="400" Width="800">
 
             </lvc:CartesianChart>
+            <ListBox>
+                
+            </ListBox>
         </StackPanel>
     </Grid>
 </Window>

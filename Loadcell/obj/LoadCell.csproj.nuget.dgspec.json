@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Projects\\LoadCell\\LoadCell.csproj": {}
+    "D:\\Projects\\LoadCell\\Loadcell\\LoadCell.csproj": {}
   },
   "projects": {
-    "D:\\Projects\\LoadCell\\LoadCell.csproj": {
+    "D:\\Projects\\LoadCell\\Loadcell\\LoadCell.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projects\\LoadCell\\LoadCell.csproj",
+        "projectUniqueName": "D:\\Projects\\LoadCell\\Loadcell\\LoadCell.csproj",
         "projectName": "LoadCell",
-        "projectPath": "D:\\Projects\\LoadCell\\LoadCell.csproj",
+        "projectPath": "D:\\Projects\\LoadCell\\Loadcell\\LoadCell.csproj",
         "packagesPath": "C:\\Users\\luken\\.nuget\\packages\\",
-        "outputPath": "D:\\Projects\\LoadCell\\obj\\",
+        "outputPath": "D:\\Projects\\LoadCell\\Loadcell\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

@@ -16,14 +16,17 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using InTheHand.Net.Sockets;
 using LiveChartsCore;
 using LiveChartsCore.Kernel.Sketches;
 using LiveChartsCore.SkiaSharpView;
+using Loadcell.Core;
 
 namespace LoadCell
 {
     public partial class MainWindow : Window , INotifyPropertyChanged
     {
+
         ISensor loadcell = new MockSensor();
         public string value = "";
         float[] log = new float[100];
@@ -41,7 +44,6 @@ namespace LoadCell
         {
             this.DataContext = this;
             InitializeComponent();
-
             ReadData();
         }
         private async void ReadData()
@@ -67,7 +69,7 @@ namespace LoadCell
 
         private void Test_Button_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show(Convert.ToString(log[0]) + ", " + Convert.ToString(log[1]) + ", " + Convert.ToString(log[2]));
+            //MessageBox.Show(Convert.ToString(log[0]) + ", " + Convert.ToString(log[1]) + ", " + Convert.ToString(log[2]));
         }
 
         public event PropertyChangedEventHandler? PropertyChanged;

@@ -1,0 +1,13 @@
+D:\Projects\LoadCell\Loadcell.Core.BluetoothLE\bin\Debug\net8.0\Loadcell.Core.BluetoothLE.deps.json
+D:\Projects\LoadCell\Loadcell.Core.BluetoothLE\bin\Debug\net8.0\Loadcell.Core.BluetoothLE.dll
+D:\Projects\LoadCell\Loadcell.Core.BluetoothLE\bin\Debug\net8.0\Loadcell.Core.BluetoothLE.pdb
+D:\Projects\LoadCell\Loadcell.Core.BluetoothLE\obj\Debug\net8.0\Loadcell.Core.BluetoothLE.csproj.AssemblyReference.cache
+D:\Projects\LoadCell\Loadcell.Core.BluetoothLE\obj\Debug\net8.0\Loadcell.Core.BluetoothLE.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\LoadCell\Loadcell.Core.BluetoothLE\obj\Debug\net8.0\Loadcell.Core.BluetoothLE.AssemblyInfoInputs.cache
+D:\Projects\LoadCell\Loadcell.Core.BluetoothLE\obj\Debug\net8.0\Loadcell.Core.BluetoothLE.AssemblyInfo.cs
+D:\Projects\LoadCell\Loadcell.Core.BluetoothLE\obj\Debug\net8.0\Loadcell.Core.BluetoothLE.csproj.CoreCompileInputs.cache
+D:\Projects\LoadCell\Loadcell.Core.BluetoothLE\obj\Debug\net8.0\Loadcell.Core.BluetoothLE.sourcelink.json
+D:\Projects\LoadCell\Loadcell.Core.BluetoothLE\obj\Debug\net8.0\Loadcell.Core.BluetoothLE.dll
+D:\Projects\LoadCell\Loadcell.Core.BluetoothLE\obj\Debug\net8.0\refint\Loadcell.Core.BluetoothLE.dll
+D:\Projects\LoadCell\Loadcell.Core.BluetoothLE\obj\Debug\net8.0\Loadcell.Core.BluetoothLE.pdb
+D:\Projects\LoadCell\Loadcell.Core.BluetoothLE\obj\Debug\net8.0\ref\Loadcell.Core.BluetoothLE.dll

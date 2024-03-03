@@ -1,0 +1,12 @@
+D:\Projects\LoadCell\Loadcell.Core\bin\Debug\net8.0\Loadcell.Core.deps.json
+D:\Projects\LoadCell\Loadcell.Core\bin\Debug\net8.0\Loadcell.Core.dll
+D:\Projects\LoadCell\Loadcell.Core\bin\Debug\net8.0\Loadcell.Core.pdb
+D:\Projects\LoadCell\Loadcell.Core\obj\Debug\net8.0\Loadcell.Core.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\LoadCell\Loadcell.Core\obj\Debug\net8.0\Loadcell.Core.AssemblyInfoInputs.cache
+D:\Projects\LoadCell\Loadcell.Core\obj\Debug\net8.0\Loadcell.Core.AssemblyInfo.cs
+D:\Projects\LoadCell\Loadcell.Core\obj\Debug\net8.0\Loadcell.Core.csproj.CoreCompileInputs.cache
+D:\Projects\LoadCell\Loadcell.Core\obj\Debug\net8.0\Loadcell.Core.sourcelink.json
+D:\Projects\LoadCell\Loadcell.Core\obj\Debug\net8.0\Loadcell.Core.dll
+D:\Projects\LoadCell\Loadcell.Core\obj\Debug\net8.0\refint\Loadcell.Core.dll
+D:\Projects\LoadCell\Loadcell.Core\obj\Debug\net8.0\Loadcell.Core.pdb
+D:\Projects\LoadCell\Loadcell.Core\obj\Debug\net8.0\ref\Loadcell.Core.dll
