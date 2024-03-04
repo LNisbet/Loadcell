@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("LoadCell.WPF")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d1f81386930a5649b18df308ad0403a0070c513b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+40fb8270d3e6959d26031fcd68bb730535f7b668")]
 [assembly: System.Reflection.AssemblyProductAttribute("LoadCell.WPF")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LoadCell.WPF")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

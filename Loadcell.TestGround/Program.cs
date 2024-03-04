@@ -16,7 +16,7 @@ namespace Loadcell.TestGround
             IBluetoothLE BluetoothLE = new LoadcellBluetoothLE();
             for (int i = 0; i < BluetoothLE.BluetoothLEDevices.Count; i++)
             {
-                Console.WriteLine($"Device Name: {BluetoothLE.BluetoothLEDevices[i].Name} Rssi: {BluetoothLE.BluetoothLEDevices[i].Address}");
+                Console.WriteLine($"Device Name: {BluetoothLE.BluetoothLEDevices[i].Name} Connected: {BluetoothLE.BluetoothLEDevices[i].IsConnected}");
             }
 
             Console.ReadLine();

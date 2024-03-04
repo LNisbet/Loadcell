@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Loadcell.TestGround
-build_property.ProjectDir = D:\Projects\LoadCell\Loadcell.TestGround\
+build_property.ProjectDir = C:\Users\nesbit0l\Documents\Repos\LoadCell\Loadcell.TestGround\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

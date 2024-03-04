@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "Y8B8VWbfACL/avwACGtQ8iRfoCQYK4izk6dY1qNllrsz80npGvcIvyVia35OPbUItQYr8fXIz5ZmAjB1ai3cWw==",
+  "dgSpecHash": "0YXBYoliFSyzNIFOKDZiSB2a1by8yz73heOAd96ClGeviyqCCijqhlZovFC+Aht1/FQFDrri5d8ugmzauU8RPQ==",
   "success": true,
-  "projectFilePath": "D:\\Projects\\LoadCell\\Loadcell.Core.BluetoothLE\\Loadcell.Core.BluetoothLE.csproj",
+  "projectFilePath": "C:\\Users\\nesbit0l\\Documents\\Repos\\LoadCell\\Loadcell.Core.BluetoothLE\\Loadcell.Core.BluetoothLE.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\luken\\.nuget\\packages\\32feet.net\\3.5.0\\32feet.net.3.5.0.nupkg.sha512"
+    "C:\\Users\\nesbit0l\\.nuget\\packages\\32feet.net\\3.5.0\\32feet.net.3.5.0.nupkg.sha512"
   ],
   "logs": [
     {

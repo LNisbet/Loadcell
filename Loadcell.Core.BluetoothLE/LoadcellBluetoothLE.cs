@@ -12,22 +12,27 @@ namespace Loadcell.Core.BluetoothLE
 {
     public class LoadcellBluetoothLE : IBluetoothLE
     {
-
+        private List<BluetoothLEDevice> devices = new();
         public List<BluetoothLEDevice> BluetoothLEDevices
         {
             get
             {
-                BluetoothClient bluetoothClient = new();
-                var bluetoothDevices = bluetoothClient.DiscoverDevices();
-                var bluetoothDeviceInfos = bluetoothDevices.ToList();
-                List<BluetoothLEDevice> devices = new();
-                for (int i = 0; i < bluetoothDeviceInfos.Count; i++)
-                {
-                    devices.Add(new BluetoothLEDevice(bluetoothDeviceInfos[i]));
-                }
                 return devices;
             }
         }
+
+        public LoadcellBluetoothLE()
+        {
+            BluetoothClient bluetoothClient = new();
+            var bluetoothDevices = bluetoothClient.DiscoverDevices();
+            var bluetoothDeviceInfos = bluetoothDevices.ToList();
+            for (int i = 0; i < bluetoothDeviceInfos.Count; i++)
+            {
+                devices.Add(new BluetoothLEDevice(bluetoothDeviceInfos[i]));
+            }
+        }
+
+
 
         public async Task<BluetoothDeviceInfo[]> SearchDevicesAsync()
         {
