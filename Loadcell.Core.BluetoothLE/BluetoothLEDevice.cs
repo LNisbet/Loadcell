@@ -3,42 +3,32 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using InTheHand.Net.Bluetooth;
-using InTheHand.Net.Sockets;
+using Windows.Devices.Enumeration;
 
 namespace Loadcell.Core.BluetoothLE
 {
     public class BluetoothLEDevice
     {
         public string Name { get; }
-        public string Address { get; }
-        public bool IsConnected { get; }
-        public bool Authenticated { get; }
-        public bool Remembered { get; }
-        public DateTime LastSeen { get; }
-        public DateTime LastUsed { get; }
-        public int Rssi { get; }
+        public string ID { get; }
 
         #region Constructors
 
         public BluetoothLEDevice()
         {
             Name = "No Name";
-            Address = "No Address";
+            ID = "No ID";
         }
-        public BluetoothLEDevice(BluetoothDeviceInfo deviceInfo)
+        public BluetoothLEDevice(string name, string id)
         {
-            Name = deviceInfo.DeviceName;
-            Address = $"{deviceInfo.DeviceAddress}";
-            IsConnected = deviceInfo.Connected;
-            Authenticated = deviceInfo.Authenticated;
-            Remembered = deviceInfo.Remembered;
-            LastSeen = deviceInfo.LastSeen;
-            LastUsed = deviceInfo.LastUsed;
-            Rssi = deviceInfo.Rssi;
+            Name = name;
+            ID = id;
         }
-
-
+        public BluetoothLEDevice(DeviceInformation info)
+        {
+            Name = info.Name;
+            ID = info.Id;
+        }
 
         #endregion
 

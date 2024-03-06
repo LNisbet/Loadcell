@@ -1,23 +1,27 @@
 ﻿// See https://aka.ms/new-console-template for more information
-using InTheHand.Net.Sockets;
-using Loadcell.Core;
+//using Loadcell.Core.BluetoothLE;
 using Loadcell.Core.BluetoothLE;
 using System.Runtime.Serialization.Formatters;
 using System.Security.Cryptography.X509Certificates;
-using InTheHand.Net.Bluetooth;
+using Windows.Devices.Bluetooth;
+using Windows.Devices.Bluetooth.GenericAttributeProfile;
+using Windows.Devices.Enumeration;
 
 namespace Loadcell.TestGround
 {
     class Program {
 
         
-        static void Main(string[] args)
+        static void Main()
         {
-            IBluetoothLE BluetoothLE = new LoadcellBluetoothLE();
-            for (int i = 0; i < BluetoothLE.BluetoothLEDevices.Count; i++)
+            IBluetoothLEConnection bluetoothLEConnection = new WindowsBluetoothLEConnection();
+            bluetoothLEConnection.Devices.Clear();
+            bluetoothLEConnection.StartScanningForDevices();
+
+            bluetoothLEConnection.Devices.CollectionChanged += (sender, info) =>
             {
-                Console.WriteLine($"Device Name: {BluetoothLE.BluetoothLEDevices[i].Name} Connected: {BluetoothLE.BluetoothLEDevices[i].IsConnected}");
-            }
+                Console.WriteLine($"Name: {bluetoothLEConnection.Devices.Last().Name}, ID: {bluetoothLEConnection.Devices.Last().ID}");
+            };
 
             Console.ReadLine();
         }
