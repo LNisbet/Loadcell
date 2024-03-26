@@ -12,7 +12,7 @@ namespace Loadcell.Core.BluetoothLE
         ObservableCollection<BluetoothLEDevice> Devices { get; }
         void StartScanningForDevices();
         void StopScanningForDevices();
-        void Connect();
-        void Disconnect();
+        void Connect(BluetoothLEDevice Device);
+        void Disconnect(BluetoothLEDevice Device);
     }
 }

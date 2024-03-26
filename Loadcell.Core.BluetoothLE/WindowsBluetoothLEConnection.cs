@@ -52,23 +52,29 @@ namespace Loadcell.Core.BluetoothLE
         }
         #endregion
 
+        #region Implementation
         public void StartScanningForDevices()
         {
             deviceWatcher.Start();
         }
+
         public void StopScanningForDevices()
         {
             deviceWatcher.Stop();
         }
-        public void Connect()
+
+        public void Connect(BluetoothLEDevice Device)
+        {
+            if (!devices.Contains(Device)) { throw new ConnectionFailedException($"{Device.Name} was not found"); }
+
+            throw new NotImplementedException();
+        }
+
+        public void Disconnect(BluetoothLEDevice Device)
         {
             throw new NotImplementedException();
         }
 
-        public void Disconnect()
-        {
-            throw new NotImplementedException();
-        }
-
+        #endregion
     }
 }
