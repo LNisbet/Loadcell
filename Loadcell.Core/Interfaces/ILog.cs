@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Markup;
 
-namespace LoadCell.Core
+namespace Loadcell.Core
 {
     internal interface ILog<T>
     {

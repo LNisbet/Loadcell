@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LoadCell.Core
+namespace Loadcell.Core
 {
     internal class Logging : ILog<float>
     {

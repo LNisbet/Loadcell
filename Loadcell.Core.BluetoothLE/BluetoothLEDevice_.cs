@@ -7,24 +7,24 @@ using Windows.Devices.Enumeration;
 
 namespace Loadcell.Core.BluetoothLE
 {
-    public class BluetoothLEDevice
+    public class BluetoothLEDevice_
     {
         public string Name { get; }
         public string ID { get; }
 
         #region Constructors
 
-        public BluetoothLEDevice()
+        public BluetoothLEDevice_()
         {
             Name = "No Name";
             ID = "No ID";
         }
-        public BluetoothLEDevice(string name, string id)
+        public BluetoothLEDevice_(string name, string id)
         {
             Name = name;
             ID = id;
         }
-        public BluetoothLEDevice(DeviceInformation info)
+        public BluetoothLEDevice_(DeviceInformation info)
         {
             Name = info.Name;
             ID = info.Id;

@@ -16,7 +16,6 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using InTheHand.Net.Sockets;
 using LiveChartsCore;
 using LiveChartsCore.Kernel.Sketches;
 using LiveChartsCore.SkiaSharpView;
@@ -27,7 +26,7 @@ namespace LoadCell
     public partial class MainWindow : Window , INotifyPropertyChanged
     {
 
-        ISensor loadcell = new MockSensor();
+        //ISensor loadcell = new MockSensor();
         public string value = "";
         float[] log = new float[100];
         public ISeries[] Series { get; set; }
@@ -52,12 +51,12 @@ namespace LoadCell
             {
                 await Task.Delay(2000);
 
-                float val = loadcell.Value;
-                value = Convert.ToString(val);
+                //float val = loadcell.Value;
+                //value = Convert.ToString(val);
                 
                 var arr = log;
                 Array.Copy(arr, 0, log, 1, log.Length - 1);
-                log[0] = val;
+                //log[0] = val;
                 //TestChart.Series = new LineSeries<float> { Values = log, Fill = null },0;
                 Value_TextBlock.Text = value;
             }

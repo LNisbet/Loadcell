@@ -5,14 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Markup;
 
-namespace LoadCell.Core.BluetoothLE
+namespace Loadcell.Core
 {
     public class WeightMeasurement
     {
-        public uint Weight { get; set; }
-        public uint TimeStamp { get; set; }
+        public float Weight { get; }
+        public uint TimeStamp { get; }
 
-        public WeightMeasurement(uint weight, uint timestamp)
+        public WeightMeasurement(float weight, uint timestamp)
         {
             Weight = weight;
             TimeStamp = timestamp;
