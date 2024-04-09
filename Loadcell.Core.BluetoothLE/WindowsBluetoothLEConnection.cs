@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Collections.ObjectModel;
 using System.Reflection.Metadata.Ecma335;
 using Windows.Storage.Streams;
+using Windows.Foundation;
 
 namespace Loadcell.Core.BluetoothLE
 {
@@ -37,9 +38,9 @@ namespace Loadcell.Core.BluetoothLE
             "System.Devices.Aep.Bluetooth.Le.IsConnectable"
             };
             // BT_Code: Example showing paired and non-paired in a single query.
-            string aqsAllBluetoothLEDevices ="(System.Devices.Aep.ProtocolId:=\"{bb7bb05e-5972-42b5-94fc-76eaa7084d49}\")";
+            string aqsAllBluetoothLEDevices = "(System.Devices.Aep.ProtocolId:=\"{bb7bb05e-5972-42b5-94fc-76eaa7084d49}\")";
 
-            deviceWatcher = DeviceInformation.CreateWatcher(aqsAllBluetoothLEDevices,requestedProperties,DeviceInformationKind.AssociationEndpoint);
+            deviceWatcher = DeviceInformation.CreateWatcher(aqsAllBluetoothLEDevices, requestedProperties, DeviceInformationKind.AssociationEndpoint);
         }
         #endregion
 
@@ -79,7 +80,7 @@ namespace Loadcell.Core.BluetoothLE
 
             deviceWatcher.Stop();
         }
-public async void Pair(DeviceInformation Device)
+        public async void Pair(DeviceInformation Device)
         {
             // BT_Code: Pair the currently selected device.
             DevicePairingResult result = await Device.Pairing.PairAsync();
@@ -104,18 +105,43 @@ public async void Pair(DeviceInformation Device)
                 // If the services supported by the device are expected to change during BT usage, subscribe to the GattServicesChanged event.
                 GattDeviceServicesResult result = await bluetoothLeDevice.GetGattServicesAsync(BluetoothCacheMode.Uncached);
             }
+        }
+
+        public void Disconnect(DeviceInformation Device)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void SendCommand(int command, GattCharacteristic characteristic)
+        {
+            DataWriter writer = new();
+            writer.ByteOrder = ByteOrder.LittleEndian;
+            writer.WriteInt32(command);
+
+            WriteBufferToSelectedCharacteristicAsync(writer.DetachBuffer(), characteristic);
+        }
+
+        private async void WriteBufferToSelectedCharacteristicAsync(IBuffer buffer, GattCharacteristic characteristic)
+        {
+            // BT_Code: Writes the value from the buffer to the characteristic.
+            GattWriteResult result = await characteristic.WriteValueWithResultAsync(buffer);
+
+            if (result.Status == GattCommunicationStatus.Success)
+            {
+                //Successfully wrote value to device
+                return;
             }
+            else
+            {
+                //Write failed
+                throw new ConnectionFailedException();
+            }
+            #endregion
+        }
 
-        public void Disconnect(BluetoothLEDevice_ Device)
+        public bool SubscrbeToService(GattServiceProvider service)
         {
             throw new NotImplementedException();
         }
-
-        public void SendCommand(byte command)
-        {
-            throw new NotImplementedException();
-        }
-
-        #endregion
     }
 }
