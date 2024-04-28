@@ -10,6 +10,7 @@ using System.Collections.ObjectModel;
 using System.Reflection.Metadata.Ecma335;
 using Windows.Storage.Streams;
 using Windows.Foundation;
+using Windows.Security.Cryptography;
 
 namespace Loadcell.Core.BluetoothLE
 {
@@ -136,12 +137,52 @@ namespace Loadcell.Core.BluetoothLE
                 //Write failed
                 throw new ConnectionFailedException();
             }
-            #endregion
         }
 
-        public bool SubscrbeToService(GattServiceProvider service)
+        public async void SubscrbeToCharacteristic(GattCharacteristic characteristic)
         {
-            throw new NotImplementedException();
+            GattClientCharacteristicConfigurationDescriptorValue cccdValue = GattClientCharacteristicConfigurationDescriptorValue.None;
+            if ((characteristic.CharacteristicProperties & GattCharacteristicProperties.Indicate) != GattCharacteristicProperties.None)
+            {
+                cccdValue = GattClientCharacteristicConfigurationDescriptorValue.Indicate;
+            }
+            else if ((characteristic.CharacteristicProperties & GattCharacteristicProperties.Notify) != GattCharacteristicProperties.None)
+            {
+                cccdValue = GattClientCharacteristicConfigurationDescriptorValue.Notify;
+            }
+
+            // BT_Code: Must write the CCCD in order for server to send indications.
+            // We receive them in the ValueChanged event handler.
+            GattCommunicationStatus status = await characteristic.WriteClientCharacteristicConfigurationDescriptorAsync(cccdValue);
+
+
+            if (status == GattCommunicationStatus.Success)
+            {
+                //Successfully subscribed for value changes
+            }
+            else
+            {
+                //Error registering for value changes
+            }
         }
+
+        public async void UnsubscrbeFromService(GattCharacteristic characteristic)
+        {
+            // BT_Code: Must write the CCCD in order for server to send notifications.
+            // We receive them in the ValueChanged event handler.
+            // Note that this sample configures either Indicate or Notify, but not both.
+            GattCommunicationStatus result = await characteristic.WriteClientCharacteristicConfigurationDescriptorAsync(GattClientCharacteristicConfigurationDescriptorValue.None);
+            if (result == GattCommunicationStatus.Success)
+            {
+                //Successfully un-registered for notifications
+            }
+            else
+            {
+                //Error un-registering for notifications
+            }
+        }
+
+        #endregion
+
     }
 }

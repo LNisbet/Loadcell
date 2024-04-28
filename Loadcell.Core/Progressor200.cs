@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Loadcell.Core.BluetoothLE;
+using Windows.Security.Cryptography;
+using Windows.Storage.Streams;
 
 namespace Loadcell.Core
 {
@@ -17,7 +19,7 @@ namespace Loadcell.Core
         public uint BatteryVoltage_mV { 
             get 
             {
-                _BLEConnection.SendCommand(Convert.ToByte(EProgressorCommands.GET_BATTERY_VOLTAGE));
+                _BLEConnection.SendCommand(Convert.ToByte(EProgressorOpcodes.GET_BATTERY_VOLTAGE));
                 return batteryVoltage_mV;
             }
         }
@@ -39,59 +41,29 @@ namespace Loadcell.Core
         public void Shutdown()
         {
             StopMeasurement();
-            _BLEConnection.SendCommand(Convert.ToByte(EProgressorCommands.ENTER_SLEEP));
+            _BLEConnection.SendCommand(Convert.ToByte(EProgressorOpcodes.ENTER_SLEEP));
         }
 
         public void StartMeasurement()
         {
-            _BLEConnection.SendCommand(Convert.ToByte(EProgressorCommands.START_WEIGHT_MEASUREMENT));
+            _BLEConnection.SendCommand(Convert.ToByte(EProgressorOpcodes.START_WEIGHT_MEASUREMENT));
         }
 
         public void StopMeasurement()
         {
-            _BLEConnection.SendCommand(Convert.ToByte(EProgressorCommands.STOP_WEIGHT_MEASUREMENT));
+            _BLEConnection.SendCommand(Convert.ToByte(EProgressorOpcodes.STOP_WEIGHT_MEASUREMENT));
         }
 
         public void TareScale()
         {
-            _BLEConnection.SendCommand(Convert.ToByte(EProgressorCommands.TARE_SCALE));
+            _BLEConnection.SendCommand(Convert.ToByte(EProgressorOpcodes.TARE_SCALE));
         }
 
         #endregion
 
         #region Recive Commands
-        void RecivedCommandDecription(string command)
-        {
-            EProgressorResponses responseCode = new();
-            int Length = 0;
-            float fValue = 0;
-            uint iValue = 0;
 
-            switch (responseCode)
-            {
-                case EProgressorResponses.CMD_RESPONSE:
-                    batteryVoltage_mV = iValue;
-                    return;
-
-                case EProgressorResponses.WEIGHT_MEAS:
-                    weightMeasurement = new (MeasurementConverter(fValue, MeasurementUnits), iValue);
-                    return;
-
-                case EProgressorResponses.LOW_PWR_WARNING:
-                    throw new ProgressorException("Low Power Switching off");
-
-                case EProgressorResponses.RFD_PEAK:
-                    throw new NotImplementedException();
-
-                case EProgressorResponses.RFD_PEAK_SERIES:
-                    throw new NotImplementedException();
-
-                default:
-                    throw new ProgressorException($"Unknown Response: {responseCode}");
-            }
-        }
-
-        float MeasurementConverter(float raw, EMeasurementUnits units)
+        float WeightUnitConverter(float raw, EMeasurementUnits units)
         {
             switch (units)
             {
@@ -104,6 +76,45 @@ namespace Loadcell.Core
 
                 default:
                     return raw;
+            }
+        }
+
+        public ProgressorResponse ParseLoadcellResponse(IBuffer buffer)
+        {
+            
+            byte[] bytes = new byte[buffer.Length];
+            CryptographicBuffer.CopyToByteArray(buffer, out bytes);
+
+            EProgressorResponseCodes responseCode = (EProgressorResponseCodes)bytes.ElementAt(1);
+            byte length = bytes.ElementAt(1);
+            byte[] value = new byte[length];
+
+            Array.Copy(bytes, 2, value, 0, length);
+
+            switch (responseCode)
+            {
+                case EProgressorResponseCodes.CMD_RESPONSE:
+                    uint batteryVoltage_mV = BitConverter.ToUInt32(value, 0);
+
+                    return new ProgressorResponse(responseCode, length, batteryVoltage_mV);
+
+                case EProgressorResponseCodes.WEIGHT_MEASUREMENT:
+                    uint timestamp = BitConverter.ToUInt32(value, 0);
+                    float weightMeasurement = BitConverter.ToSingle(value, 8);
+
+                    return new ProgressorResponse(responseCode, length, timestamp, weightMeasurement);
+
+                case EProgressorResponseCodes.LOW_PWR_WARNING:
+                    throw new ProgressorException("Low Power Switching off");
+
+                case EProgressorResponseCodes.RFD_PEAK:
+                    throw new NotImplementedException();
+
+                case EProgressorResponseCodes.RFD_PEAK_SERIES:
+                    throw new NotImplementedException();
+
+                default:
+                    throw new ProgressorException($"Unknown Response: {responseCode}");
             }
         }
         #endregion

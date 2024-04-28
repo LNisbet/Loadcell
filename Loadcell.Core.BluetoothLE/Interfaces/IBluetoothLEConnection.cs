@@ -12,7 +12,7 @@ namespace Loadcell.Core.BluetoothLE
         void Connect(DeviceInformation Device);
         void Disconnect(DeviceInformation Device);
         void SendCommand(int command, GattCharacteristic characteristic);
-        bool SubscrbeToService (GattServiceProvider service);
+        void SubscrbeToCharacteristic(GattCharacteristic characteristic);
         byte CommandRecived { get; }
     }
 }
